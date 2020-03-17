@@ -1,0 +1,76 @@
+//package
+package {{.PackageName}};
+
+//webtable_v1 gen
+
+//import some package and class
+import lombok.Data;
+import top.hcy.webtable.annotation.charts.WChart;
+import top.hcy.webtable.annotation.field.*;
+import top.hcy.webtable.annotation.method.WDeleteTrigger;
+import top.hcy.webtable.annotation.method.WInsertTrigger;
+import top.hcy.webtable.annotation.method.WUpdateTrigger;
+import top.hcy.webtable.annotation.table.*;
+import top.hcy.webtable.charts.WCharts;
+import top.hcy.webtable.common.enums.WebFieldType;
+
+
+@Data
+@WTable(aliasName = "{{.AliasName}}",tableName = "{{.TableName}}")
+{{if  .EnableInsert }}@WEnadbleInsert {{end}}
+{{if  .EnadbleFind }}@WEnadbleInsert {{end}}
+{{if  .EnadbleUpdate }}@WEnadbleUpdate {{end}}
+{{if  .EnadbleSort }}@WEnadbleSort {{end}}
+{{if  .EnadbleDelete }}@WEnadbleDelete {{end}}
+{{if  .EnadbleChart }}@WEnadbleChart {{end}}
+public class {{.ClassName}} {
+
+{{range $k, $v := .Fields}}
+   @WField(aliasName = "{{$v.Alias}}",columnName = "{{$v.Column}}")
+   private {{$v.Type}} {{$v.Name}}
+{{end}}
+
+
+
+// @WFieldToShow("")
+// public void wFieldToPersistenceAge(Object ob){
+//  System.out.println("------------- 展示时，调用 ------------- ");
+// }
+
+// @WFieldToShow("")
+// public void wFieldToPersistenceAge(){
+//  System.out.println("------------- 展示时，调用 ------------- ");
+// }
+
+// @WFieldToPersistence("")
+// public void wFieldToPersistenceAge(Object ob){
+//  System.out.println("------------- 存储时，调用 ------------- ");
+// }
+
+// @WFieldToPersistence("")
+// public void wFieldToPersistenceAge(){
+//  System.out.println("------------- 存储时，调用 ------------- ");
+// }
+
+// @WInsertTrigger
+// public void insertDataTrigger(WebTableContext ctx){
+//  System.out.println("------------- 插入触发器 --------------");
+// }
+//
+// @WUpdateTrigger
+// public void updateDataTrigger(WebTableContext ctx){
+//  System.out.println("------------- 更新触发器 --------------");
+// }
+//
+// @WDeleteTrigger
+// public void deleteDataTrigger(WebTableContext ctx){
+//  System.out.println("------------- 删除触发器 --------------");
+// }
+
+
+//   @WChart(value = " ",showDashboard = true)
+//   public WCharts chart3(){
+//
+//
+//   }
+}

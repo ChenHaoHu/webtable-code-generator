@@ -1,6 +1,6 @@
-//create by webtable-code-generator webtable_v1 gen at {{.CreatedOn.Format "Jan 02, 2006 15:04:05 UTC"}}
+//create by webtable-code-generator webtable_v1 gen at Mar 18, 2020 01:50:57 UTC
 //package 
-package {{.Package}};
+package top.hcy.entity;
 
 //import some package and class
 import top.hcy.webtable.annotation.charts.WChart;
@@ -12,19 +12,18 @@ import top.hcy.webtable.annotation.table.*;
 import top.hcy.webtable.charts.WCharts;
 import top.hcy.webtable.common.enums.WebFieldType;
 
-{{if  .EnableInsert }}@WEnadbleInsert {{end}}
-{{if  .EnadbleFind }}@WEnadbleInsert {{end}}
-{{if  .EnadbleUpdate }}@WEnadbleUpdate {{end}}
-{{if  .EnadbleSort }}@WEnadbleSort {{end}}
-{{if  .EnadbleDelete }}@WEnadbleDelete {{end}}
-{{if  .EnadbleChart }}@WEnadbleChart {{end}}
-@WTable(aliasName = "{{.Alias}}",tableName = "{{.Table}}")
-public class {{.ClassName}} {
 
-{{range $k, $v := .Fields}}
-   @WField(aliasName = "{{$v.Alias}}",columnName = "{{$v.Column}}")
-   private {{$v.Type}} {{$v.Name}};
-{{end}}
+
+
+
+
+@WTable(aliasName = "测试2",tableName = "")
+public class Data2 {
+
+
+   @WField(aliasName = "",columnName = "")
+   private int age;
+
 
 
 // @WFieldToShow("")

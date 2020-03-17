@@ -1,10 +1,12 @@
 package webtable
 
+import "time"
+
 type Class struct {
-	PackageName   string
+	Package       string
 	ClassName     string
-	AliasName     string
-	TableName     string
+	Alias         string
+	Table         string
 	Fields        []Field
 	EnableInsert  bool
 	EnadbleFind   bool
@@ -16,21 +18,26 @@ type Class struct {
 	InsertTrigger string
 	UpdateTrigger string
 	DeleteTrigger string
+	CreatedOn     time.Time
 }
 
 func NewClass(PackageName string, ClassName string) *Class {
 	return &Class{
-		PackageName: PackageName,
-		ClassName:   ClassName,
-		AliasName:   ClassName,
-		TableName:   ClassName,
+		Package:   PackageName,
+		ClassName: ClassName,
+		Alias:     ClassName,
+		Table:     ClassName,
 	}
 }
 
 func (c *Class) SetAlias(AliasName string) {
-	c.AliasName = AliasName
+	c.Alias = AliasName
 }
 
 func (c *Class) SetFields(Fields []Field) {
 	c.Fields = Fields
+}
+
+func (c *Class) SyncCreatedOnTime() {
+	c.CreatedOn = time.Now()
 }

@@ -1,0 +1,31 @@
+project: "测试项目"
+desc: "这是一个描述"
+dbconfig:
+  host: "127.0.0.1"
+  port: 22
+  database: "test"
+  username: "root"
+  passwd: "passwd"
+classes:
+  Data1:
+    package: "top.hcy.entity"
+    classname: "Data1"
+    alias: "测试1"
+    fields: 
+      - type: String
+        name: "name"
+    fields: 
+      - type: int
+        name: "age"
+  Data2:
+    package: "top.hcy.entity"
+    classname: "Data2"
+    alias: "测试2"
+    fields: 
+      - type: String
+        name: "name"
+    fields: 
+      - type: int
+        name: "age"
+
+  

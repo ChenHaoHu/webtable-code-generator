@@ -1,0 +1,181 @@
+project: aaaa
+desc: dddd
+classes:
+  books:
+    package: cccc
+    classname: books
+    alias: books
+    table: books
+    fields:
+    - type: int
+      name: bookId
+      alias: book_id
+      column: book_id
+    - type: String
+      name: bookName
+      alias: book_name
+      column: book_name
+    - type: String
+      name: bookDesc
+      alias: book_desc
+      column: book_desc
+    - type: double
+      name: bookPrice
+      alias: book_price
+      column: book_price
+    - type: int
+      name: bookNum
+      alias: book_num
+      column: book_num
+    - type: String
+      name: bookPic
+      alias: book_pic
+      column: book_pic
+    enableinsert: false
+    enadblefind: false
+    enadbleupdate: false
+    enadblesort: false
+    enadbledelete: false
+    enadblechart: false
+    selecttrigger: ""
+    inserttrigger: ""
+    updatetrigger: ""
+    deletetrigger: ""
+    createdon: 0001-01-01T00:00:00Z
+  data1:
+    package: cccc
+    classname: data1
+    alias: data1
+    table: data1
+    fields:
+    - type: int
+      name: id
+      alias: id
+      column: id
+    - type: String
+      name: name
+      alias: name
+      column: name
+    - type: int
+      name: age
+      alias: age
+      column: age
+    - type: String
+      name: passwd
+      alias: passwd
+      column: passwd
+    - type: String
+      name: data1
+      alias: data1
+      column: data1
+    - type: String
+      name: data2
+      alias: data2
+      column: data2
+    - type: String
+      name: data3
+      alias: data3
+      column: data3
+    - type: String
+      name: data4
+      alias: data4
+      column: data4
+    enableinsert: false
+    enadblefind: false
+    enadbleupdate: false
+    enadblesort: false
+    enadbledelete: false
+    enadblechart: false
+    selecttrigger: ""
+    inserttrigger: ""
+    updatetrigger: ""
+    deletetrigger: ""
+    createdon: 0001-01-01T00:00:00Z
+  data2:
+    package: cccc
+    classname: data2
+    alias: data2
+    table: data2
+    fields:
+    - type: int
+      name: id
+      alias: id
+      column: id
+    - type: String
+      name: job
+      alias: job
+      column: job
+    - type: int
+      name: num
+      alias: num
+      column: num
+    - type: String
+      name: tip
+      alias: tip
+      column: tip
+    - type: String
+      name: data1
+      alias: data1
+      column: data1
+    - type: String
+      name: data2
+      alias: data2
+      column: data2
+    - type: String
+      name: data3
+      alias: data3
+      column: data3
+    - type: String
+      name: data4
+      alias: data4
+      column: data4
+    enableinsert: false
+    enadblefind: false
+    enadbleupdate: false
+    enadblesort: false
+    enadbledelete: false
+    enadblechart: false
+    selecttrigger: ""
+    inserttrigger: ""
+    updatetrigger: ""
+    deletetrigger: ""
+    createdon: 0001-01-01T00:00:00Z
+  user:
+    package: cccc
+    classname: user
+    alias: user
+    table: user
+    fields:
+    - type: int
+      name: id
+      alias: id
+      column: id
+    - type: String
+      name: name
+      alias: name
+      column: name
+    - type: int
+      name: age
+      alias: age
+      column: age
+    - type: int
+      name: num
+      alias: num
+      column: num
+    enableinsert: false
+    enadblefind: false
+    enadbleupdate: false
+    enadblesort: false
+    enadbledelete: false
+    enadblechart: false
+    selecttrigger: ""
+    inserttrigger: ""
+    updatetrigger: ""
+    deletetrigger: ""
+    createdon: 0001-01-01T00:00:00Z
+dbconfig:
+  host: 127.0.0.1
+  port: 3306
+  database: wdb
+  username: admin
+  passwd: wdbadmin

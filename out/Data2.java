@@ -1,4 +1,4 @@
-//create by webtable-code-generator webtable_v1 gen at Mar 18, 2020 01:50:57 UTC
+//create by webtable-code-generator webtable_v1 gen at Mar 18, 2020 15:06:55 UTC
 //package 
 package top.hcy.entity;
 
@@ -11,6 +11,7 @@ import top.hcy.webtable.annotation.method.WUpdateTrigger;
 import top.hcy.webtable.annotation.table.*;
 import top.hcy.webtable.charts.WCharts;
 import top.hcy.webtable.common.enums.WebFieldType;
+
 
 
 

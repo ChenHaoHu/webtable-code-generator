@@ -1,10 +1,9 @@
 package main
 
 import (
-	"generate/webtable"
+	"generate/cmd"
 )
 
 func main() {
-	webtable.CodeGen()
-	//webtable.Test()
+	cmd.Execute()
 }

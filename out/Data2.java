@@ -1,6 +1,6 @@
-//create by webtable-code-generator webtable_v1 gen at Mar 18, 2020 15:06:55 UTC
+//create by webtable-code-generator webtable_v1 gen at Mar 19, 2020 01:17:26 UTC
 //package 
-package top.hcy.entity;
+package cccc;
 
 //import some package and class
 import top.hcy.webtable.annotation.charts.WChart;
@@ -18,12 +18,33 @@ import top.hcy.webtable.common.enums.WebFieldType;
 
 
 
-@WTable(aliasName = "测试2",tableName = "")
-public class Data2 {
+@WTable(aliasName = "data2",tableName = "data2")
+public class data2 {
 
 
-   @WField(aliasName = "",columnName = "")
-   private int age;
+   @WField(aliasName = "id",columnName = "id")
+   private int id;
+
+   @WField(aliasName = "job",columnName = "job")
+   private String job;
+
+   @WField(aliasName = "num",columnName = "num")
+   private int num;
+
+   @WField(aliasName = "tip",columnName = "tip")
+   private String tip;
+
+   @WField(aliasName = "data1",columnName = "data1")
+   private String data1;
+
+   @WField(aliasName = "data2",columnName = "data2")
+   private String data2;
+
+   @WField(aliasName = "data3",columnName = "data3")
+   private String data3;
+
+   @WField(aliasName = "data4",columnName = "data4")
+   private String data4;
 
 
 

@@ -52,7 +52,7 @@ func buildGenValues() (*Project, error) {
 	// obj := NewClass("top.hcy.webtable.entity", "Data")
 	// obj.SetAlias("测试")
 	// obj.SetFields(fields)
-	pro, err := getYmlData("project.yml")
+	pro, err := getYmlData("test.yml")
 	if err != nil {
 		return nil, err
 	}

@@ -2,15 +2,22 @@ package webtable
 
 import (
 	"database/sql"
+	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	yaml "gopkg.in/yaml.v2"
 	"log"
+	"os"
 	"strconv"
 )
 
 var dbConfig *DbConfig
 var db *sql.DB
 
-type TableDesc struct {
+var globalPackage string
+var projectName string
+var projectDesc string
+
+type DBFieldDesc struct {
 	Field   string
 	Type    string
 	Null    string
@@ -22,6 +29,7 @@ type TableDesc struct {
 func InitProYML(dbData *DbConfig) {
 	dbConfig = dbData
 	db = linkDB()
+	hanleInput()
 	handleTables()
 	defer db.Close()
 }
@@ -43,21 +51,36 @@ func linkDB() *sql.DB {
 	return db
 }
 
-func handleTable(table string) {
-	getTableDESC(table)
-
+func handleTable(table string) *Class {
+	dbTablesDesc := getTableDESC(table)
+	class := new(Class)
+	fields := []Field{}
+	for _, fieldDesc := range dbTablesDesc {
+		field := new(Field)
+		field.Name = dbFieldNameConv(fieldDesc.Field)
+		field.Type = dbFieldTypeConv(fieldDesc.Type)
+		field.Alias = dbFieldAliasConv(fieldDesc.Field)
+		field.Column = fieldDesc.Field
+		fields = append(fields, *field)
+	}
+	class.Package = globalPackage
+	class.ClassName = table
+	class.Alias = table
+	class.Table = table
+	class.Fields = fields
+	return class
 }
 
-func getTableDESC(table string) []TableDesc {
-	tablesDesc := []TableDesc{}
+func getTableDESC(table string) []DBFieldDesc {
+	tableDesc := []DBFieldDesc{}
 	res, _ := db.Query("DESC " + table)
 	for res.Next() {
-		desc := new(TableDesc)
+		desc := new(DBFieldDesc)
 		res.Scan(&desc.Field, &desc.Type, &desc.Null, &desc.Key, &desc.Default, &desc.Extra)
-		tablesDesc = append(tablesDesc, *desc)
+		tableDesc = append(tableDesc, *desc)
 	}
-	log.Printf("%+v", tablesDesc)
-	return tablesDesc
+	// log.Printf("%+v", tablesDesc)
+	return tableDesc
 }
 
 func handleTables() {
@@ -65,14 +88,16 @@ func handleTables() {
 	res, _ := db.Query("SHOW TABLES")
 	p := make(chan int)
 	len := 0
-
+	classes := map[string]Class{}
 	var table string
 	for res.Next() {
 		res.Scan(&table)
 		go func(table string) {
 			log.Println("-- START handle table ", table)
-			handleTable(table)
-			log.Println("-- END   handle table ", table)
+			class := handleTable(table)
+			//classes = append(classes, *class)
+			classes[table] = *class
+			log.Println("++ END   handle table ", table)
 			p <- 0
 		}(table)
 		len++
@@ -81,7 +106,40 @@ func handleTables() {
 	for i := 0; i < len; i++ {
 		<-p
 	}
+	//log.Printf("%+v", classes)
+
+	pro := &Project{}
+	pro.Project = projectName
+	pro.Desc = projectDesc
+	pro.Classes = classes
+	pro.Dbconfig = *dbConfig
+
+	outYAML("test.yml", pro)
 
 	defer close(p)
+
 	log.Println("-- ALL   tables finished ")
+}
+
+func outYAML(filename string, pro *Project) {
+	d, err := yaml.Marshal(&pro)
+	if err != nil {
+		log.Fatalf("error: %v", err)
+	}
+
+	file, _ := os.Create(filename)
+	file.WriteString(string(d))
+	defer file.Close()
+}
+
+func hanleInput() {
+	var ch byte
+	fmt.Print("please input the project name: ")
+	fmt.Scanf("%s", &projectName)
+	fmt.Scanf("%c", &ch)
+	fmt.Print("please input the project desc: ")
+	fmt.Scanf("%s", &projectDesc)
+	fmt.Scanf("%c", &ch)
+	fmt.Print("please input the java package: ")
+	fmt.Scanf("%s", &globalPackage)
 }

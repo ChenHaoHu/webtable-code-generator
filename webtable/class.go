@@ -1,6 +1,8 @@
 package webtable
 
-import "time"
+import (
+	"time"
+)
 
 type Class struct {
 	Package       string

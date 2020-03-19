@@ -1,8 +1,12 @@
-project: aaaa
-desc: dddd
+
+# this yml file is made by generate v0.0.1 for building entity java file.
+# U also  should check and edit it,Have a good time!
+
+project: "1"
+desc: "2"
 classes:
   books:
-    package: cccc
+    package: "3"
     classname: books
     alias: books
     table: books
@@ -43,7 +47,7 @@ classes:
     deletetrigger: ""
     createdon: 0001-01-01T00:00:00Z
   data1:
-    package: cccc
+    package: "3"
     classname: data1
     alias: data1
     table: data1
@@ -92,7 +96,7 @@ classes:
     deletetrigger: ""
     createdon: 0001-01-01T00:00:00Z
   data2:
-    package: cccc
+    package: "3"
     classname: data2
     alias: data2
     table: data2
@@ -141,7 +145,7 @@ classes:
     deletetrigger: ""
     createdon: 0001-01-01T00:00:00Z
   user:
-    package: cccc
+    package: "3"
     classname: user
     alias: user
     table: user

@@ -10,9 +10,9 @@ import (
 	"text/template"
 )
 
-func CodeGen() {
+func CodeGen(in, out string) {
 
-	pro, err := buildGenValues()
+	pro, err := buildGenValues(in)
 	if err != nil {
 		log.Println("err = ", err)
 		return
@@ -28,7 +28,7 @@ func CodeGen() {
 
 	for key, value := range pro.Classes {
 		// log.Printf("%+v", value)
-		f, err = os.Create("out/" + key + ".java")
+		f, err = os.Create(out + key + ".java")
 		if err != nil {
 			log.Println("file create err = ", err)
 			continue
@@ -45,14 +45,14 @@ func CodeGen() {
 
 }
 
-func buildGenValues() (*Project, error) {
+func buildGenValues(ymlPath string) (*Project, error) {
 
 	// fields := []Field{}
 	// fields = append(fields, Field{Type: "String", Name: "AA"})
 	// obj := NewClass("top.hcy.webtable.entity", "Data")
 	// obj.SetAlias("测试")
 	// obj.SetFields(fields)
-	pro, err := getYmlData("test.yml")
+	pro, err := getYmlData(ymlPath)
 	if err != nil {
 		return nil, err
 	}

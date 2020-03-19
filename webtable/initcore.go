@@ -16,6 +16,10 @@ var db *sql.DB
 var globalPackage string
 var projectName string
 var projectDesc string
+var notice string = `
+# this yml file is made by generate ` + VERSION + ` for building entity java file.
+# U also  should check and edit it,Have a good time!
+`
 
 type DBFieldDesc struct {
 	Field   string
@@ -122,13 +126,15 @@ func handleTables() {
 }
 
 func outYAML(filename string, pro *Project) {
+
 	d, err := yaml.Marshal(&pro)
 	if err != nil {
 		log.Fatalf("error: %v", err)
 	}
 
 	file, _ := os.Create(filename)
-	file.WriteString(string(d))
+	outStr := addHeadNotice(string(d))
+	file.WriteString(outStr)
 	defer file.Close()
 }
 
@@ -142,4 +148,11 @@ func hanleInput() {
 	fmt.Scanf("%c", &ch)
 	fmt.Print("please input the java package: ")
 	fmt.Scanf("%s", &globalPackage)
+}
+
+func addHeadNotice(body string) string {
+
+	str := notice + "\n" + body
+
+	return str
 }

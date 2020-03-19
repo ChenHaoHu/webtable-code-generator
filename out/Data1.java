@@ -1,6 +1,6 @@
-//create by webtable-code-generator webtable_v1 gen at Mar 19, 2020 01:17:26 UTC
+//create by webtable-code-generator webtable_v1 gen at Mar 19, 2020 08:24:08 UTC
 //package 
-package cccc;
+package 3;
 
 //import some package and class
 import top.hcy.webtable.annotation.charts.WChart;
@@ -49,38 +49,38 @@ public class data1 {
 
 
 // @WFieldToShow("")
-// public void wFieldToPersistenceAge(Object ob){
-//  System.out.println("------------- 展示时，调用 ------------- ");
+// public void wFieldToPersistence(Object ob){
+//  System.out.println("------------- wFieldToPersistence ------------- ");
 // }
 
 // @WFieldToShow("")
-// public void wFieldToPersistenceAge(){
-//  System.out.println("------------- 展示时，调用 ------------- ");
+// public void wFieldToPersistence(){
+//  System.out.println("------------- wFieldToPersistence ------------- ");
 // }
 
 // @WFieldToPersistence("")
-// public void wFieldToPersistenceAge(Object ob){
-//  System.out.println("------------- 存储时，调用 ------------- ");
+// public void wFieldToPersistence(Object ob){
+//  System.out.println("------------- wFieldToPersistence ------------- ");
 // }
 
 // @WFieldToPersistence("")
-// public void wFieldToPersistenceAge(){
-//  System.out.println("------------- 存储时，调用 ------------- ");
+// public void wFieldToPersistence(){
+//  System.out.println("------------- wFieldToPersistence ------------- ");
 // }
 
 // @WInsertTrigger
 // public void insertDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- 插入触发器 --------------");
+//  System.out.println("------------- insertDataTrigger --------------");
 // }
 //
 // @WUpdateTrigger
 // public void updateDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- 更新触发器 --------------");
+//  System.out.println("------------- updateDataTrigger --------------");
 // }
 //
 // @WDeleteTrigger
 // public void deleteDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- 删除触发器 --------------");
+//  System.out.println("------------- deleteDataTrigger --------------");
 // }
 
 

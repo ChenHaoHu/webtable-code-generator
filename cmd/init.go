@@ -14,6 +14,7 @@ var initCmd = &cobra.Command{
 	目前只支持Mysql数据库`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("init called")
+		dbConfig.Type = "mysql"
 		webtable.InitProYML(dbConfig)
 	},
 }

@@ -10,6 +10,9 @@ import (
 	"text/template"
 )
 
+var TEMPL string = "tmpl/webtable_v1.tmpl"
+var TEMP_NAME string = "webtable_v1.tmpl"
+
 func CodeGen(in, out string) {
 
 	pro, err := buildGenValues(in)
@@ -18,7 +21,7 @@ func CodeGen(in, out string) {
 		return
 	}
 	// log.Printf("%+v", pro)
-	t, err := template.ParseFiles("tmpl/webtable_v1.tmpl")
+	t, err := template.ParseFiles(TEMPL)
 	if err != nil {
 		log.Println("err = ", err)
 		return
@@ -34,7 +37,7 @@ func CodeGen(in, out string) {
 			continue
 		}
 		value.SyncCreatedOnTime()
-		t.ExecuteTemplate(f, "webtable_v1.tmpl", value)
+		t.ExecuteTemplate(f, TEMP_NAME, value)
 		f.Close()
 		log.Println("finish table < ", key, " > build")
 	}

@@ -3,23 +3,29 @@ package webtable
 import (
 	"database/sql"
 	"fmt"
+	"generate/version"
 	_ "github.com/go-sql-driver/mysql"
 	yaml "gopkg.in/yaml.v2"
 	"log"
 	"os"
 	"strconv"
+	"time"
 )
 
 var dbConfig *DbConfig
 var db *sql.DB
 
-var globalPackage string
-var projectName string
-var projectDesc string
+var globalPackage string = "top.hcy.entity"
+var projectName string = "project name"
+var projectDesc string = "project desc"
+var timeLayoutStr = "2006-01-02 15:04:05" //go中的时间格式化必须是这个时间
+
+const YML_PATH = "test.yml"
+
 var notice string = `
-# this yml file is made by generate ` + VERSION + ` for building entity java file.
+# this yml file is made by generate ` + version.GetVersions() + ` for building entity java file.
 # U also  should check and edit it,Have a good time!
-`
+# build at ` + time.Now().Format(timeLayoutStr) + ``
 
 type DBFieldDesc struct {
 	Field   string
@@ -65,6 +71,7 @@ func handleTable(table string) *Class {
 		field.Type = dbFieldTypeConv(fieldDesc.Type)
 		field.Alias = dbFieldAliasConv(fieldDesc.Field)
 		field.Column = fieldDesc.Field
+		syncDefaultField(field)
 		fields = append(fields, *field)
 	}
 	class.Package = globalPackage
@@ -73,6 +80,16 @@ func handleTable(table string) *Class {
 	class.Table = table
 	class.Fields = fields
 	return class
+}
+
+func syncDefaultField(field *Field) {
+	field.EnableRead = true
+	field.EnableInsert = false
+	field.EnableUpdate = false
+	field.EnableFind = false
+	field.EnableSort = false
+	field.EnableConvertToShowFunction = true
+	field.EnableConvertToPersistenceFunction = true
 }
 
 func getTableDESC(table string) []DBFieldDesc {
@@ -118,7 +135,7 @@ func handleTables() {
 	pro.Classes = classes
 	pro.Dbconfig = *dbConfig
 
-	outYAML("test.yml", pro)
+	outYAML(YML_PATH, pro)
 
 	defer close(p)
 
@@ -146,7 +163,7 @@ func hanleInput() {
 	fmt.Print("please input the project desc: ")
 	fmt.Scanf("%s", &projectDesc)
 	fmt.Scanf("%c", &ch)
-	fmt.Print("please input the java package: ")
+	fmt.Print("please input the java package (" + globalPackage + ") : ")
 	fmt.Scanf("%s", &globalPackage)
 }
 

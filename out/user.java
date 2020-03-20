@@ -1,8 +1,8 @@
-//create by webtable-code-generator webtable_v1 gen at Mar 19, 2020 08:24:08 UTC
+//create by webtable-code-generator webtable_v1 gen at Mar 20, 2020 23:36:54 UTC
 //package 
-package 3;
+package top.hcy.entity;
 
-//import some package and class
+//import some packages and classes
 import top.hcy.webtable.annotation.charts.WChart;
 import top.hcy.webtable.annotation.field.*;
 import top.hcy.webtable.annotation.method.WDeleteTrigger;
@@ -13,68 +13,80 @@ import top.hcy.webtable.charts.WCharts;
 import top.hcy.webtable.common.enums.WebFieldType;
 
 
-
-
-
-
-
 @WTable(aliasName = "user",tableName = "user")
 public class user {
 
 
+   
    @WField(aliasName = "id",columnName = "id")
    private int id;
 
+   
    @WField(aliasName = "name",columnName = "name")
    private String name;
 
+   
    @WField(aliasName = "age",columnName = "age")
    private int age;
 
+   
    @WField(aliasName = "num",columnName = "num")
    private int num;
 
 
 
-// @WFieldToShow("")
-// public void wFieldToPersistence(Object ob){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WFieldToShow("")
-// public void wFieldToPersistence(){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WFieldToPersistence("")
-// public void wFieldToPersistence(Object ob){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WFieldToPersistence("")
-// public void wFieldToPersistence(){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WInsertTrigger
-// public void insertDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- insertDataTrigger --------------");
-// }
-//
-// @WUpdateTrigger
-// public void updateDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- updateDataTrigger --------------");
-// }
-//
-// @WDeleteTrigger
-// public void deleteDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- deleteDataTrigger --------------");
-// }
 
 
-//   @WChart(value = " ",showDashboard = true)
-//   public WCharts chart3(){
-//
-//
-//   }
+
+   @WFieldToShow("id")
+   public Object widFieldToShow(Object ob){
+      System.out.println("------------- widFieldToShow ------------- ");
+      return ob;
+   }
+
+   @WFieldToShow("id")
+   public Object widFieldToPersistence(Object ob){
+      System.out.println("------------- widFieldToPersistence ------------- ");
+      return ob;
+   }
+
+
+   @WFieldToShow("name")
+   public Object wnameFieldToShow(Object ob){
+      System.out.println("------------- wnameFieldToShow ------------- ");
+      return ob;
+   }
+
+   @WFieldToShow("name")
+   public Object wnameFieldToPersistence(Object ob){
+      System.out.println("------------- wnameFieldToPersistence ------------- ");
+      return ob;
+   }
+
+
+   @WFieldToShow("age")
+   public Object wageFieldToShow(Object ob){
+      System.out.println("------------- wageFieldToShow ------------- ");
+      return ob;
+   }
+
+   @WFieldToShow("age")
+   public Object wageFieldToPersistence(Object ob){
+      System.out.println("------------- wageFieldToPersistence ------------- ");
+      return ob;
+   }
+
+
+   @WFieldToShow("num")
+   public Object wnumFieldToShow(Object ob){
+      System.out.println("------------- wnumFieldToShow ------------- ");
+      return ob;
+   }
+
+   @WFieldToShow("num")
+   public Object wnumFieldToPersistence(Object ob){
+      System.out.println("------------- wnumFieldToPersistence ------------- ");
+      return ob;
+   }
+
 }

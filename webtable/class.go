@@ -5,22 +5,22 @@ import (
 )
 
 type Class struct {
-	Package       string
-	ClassName     string
-	Alias         string
-	Table         string
-	Fields        []Field
-	EnableInsert  bool
-	EnadbleFind   bool
-	EnadbleUpdate bool
-	EnadbleSort   bool
-	EnadbleDelete bool
-	EnadbleChart  bool
-	SelectTrigger string
-	InsertTrigger string
-	UpdateTrigger string
-	DeleteTrigger string
-	CreatedOn     time.Time
+	Package              string
+	ClassName            string
+	Alias                string
+	Table                string
+	Fields               []Field
+	EnableInsert         bool
+	EnadbleFind          bool
+	EnadbleUpdate        bool
+	EnadbleSort          bool
+	EnadbleDelete        bool
+	EnadbleChart         bool
+	EnadbleSelectTrigger bool
+	EnadbleInsertTrigger bool
+	EnadbleUpdateTrigger bool
+	EnadbleDeleteTrigger bool
+	CreatedOn            time.Time
 }
 
 func NewClass(PackageName string, ClassName string) *Class {

@@ -2,7 +2,7 @@
 //package 
 package {{.Package}};
 
-//import some package and class
+//import some packages and classes
 import top.hcy.webtable.annotation.charts.WChart;
 import top.hcy.webtable.annotation.field.*;
 import top.hcy.webtable.annotation.method.WDeleteTrigger;
@@ -12,60 +12,80 @@ import top.hcy.webtable.annotation.table.*;
 import top.hcy.webtable.charts.WCharts;
 import top.hcy.webtable.common.enums.WebFieldType;
 
-{{if  .EnableInsert }}@WEnadbleInsert {{end}}
-{{if  .EnadbleFind }}@WEnadbleInsert {{end}}
-{{if  .EnadbleUpdate }}@WEnadbleUpdate {{end}}
-{{if  .EnadbleSort }}@WEnadbleSort {{end}}
-{{if  .EnadbleDelete }}@WEnadbleDelete {{end}}
-{{if  .EnadbleChart }}@WEnadbleChart {{end}}
+{{ if  .EnableInsert }}@WEnadbleInsert {{end -}}
+{{ if  .EnadbleFind }}@WEnadbleInsert {{end -}}
+{{ if  .EnadbleUpdate }}@WEnadbleUpdate {{end -}}
+{{ if  .EnadbleSort }}@WEnadbleSort {{end -}}
+{{ if  .EnadbleDelete }}@WEnadbleDelete {{end -}}
+{{ if  .EnadbleChart }}@WEnadbleChart {{end }}
 @WTable(aliasName = "{{.Alias}}",tableName = "{{.Table}}")
 public class {{.ClassName}} {
 
 {{range $k, $v := .Fields}}
-   @WField(aliasName = "{{$v.Alias}}",columnName = "{{$v.Column}}")
+   {{ if $v.EnableInsert }}@WInsertField {{end -}}
+   {{ if $v.EnableUpdate }}@WUpdateField {{end -}}
+   {{ if $v.EnableFind }}@WFindField {{end -}}
+   {{ if $v.EnableSort }}@WSortField {{end }}
+   @WField(aliasName = "{{$v.Alias}}",columnName = "{{$v.Column}}"{{- if $v.EnableRead}}{{else}}, read=false{{end}})
    private {{$v.Type}} {{$v.Name}};
 {{end}}
 
 
-// @WFieldToShow("")
-// public void wFieldToPersistence(Object ob){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WFieldToShow("")
-// public void wFieldToPersistence(){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WFieldToPersistence("")
-// public void wFieldToPersistence(Object ob){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WFieldToPersistence("")
-// public void wFieldToPersistence(){
-//  System.out.println("------------- wFieldToPersistence ------------- ");
-// }
-
-// @WInsertTrigger
-// public void insertDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- insertDataTrigger --------------");
-// }
-//
-// @WUpdateTrigger
-// public void updateDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- updateDataTrigger --------------");
-// }
-//
-// @WDeleteTrigger
-// public void deleteDataTrigger(WebTableContext ctx){
-//  System.out.println("------------- deleteDataTrigger --------------");
-// }
 
 
-//   @WChart(value = " ",showDashboard = true)
-//   public WCharts chart3(){
-//
-//
-//   }
+{{range $k, $v := .Fields}}
+{{- if $v.EnableConvertToShowFunction }}
+   @WFieldToShow("{{$v.Name}}")
+   public Object w{{$v.Name}}FieldToShow(Object ob){
+      System.out.println("------------- w{{$v.Name}}FieldToShow ------------- ");
+      return ob;
+   }
+{{end }}
+
+{{- if $v.EnableConvertToPersistenceFunction }}
+   @WFieldToShow("{{$v.Name}}")
+   public Object w{{$v.Name}}FieldToPersistence(Object ob){
+      System.out.println("------------- w{{$v.Name}}FieldToPersistence ------------- ");
+      return ob;
+   }
+
+{{end -}}
+
+{{end}}
+
+{{- if  .EnadbleSelectTrigger  }}
+ 
+   @WSelectTrigger
+   public void selectDataTrigger(WebTableContext ctx){
+      System.out.println("------------- selectDataTrigger --------------");
+   }
+
+{{end  -}}
+
+{{- if  .EnadbleInsertTrigger  }}
+ 
+   @WInsertTrigger
+   public void insertDataTrigger(WebTableContext ctx){
+      System.out.println("------------- insertDataTrigger --------------");
+   }
+
+{{end  -}}
+
+{{- if  .EnadbleUpdateTrigger  }}
+
+   @WUpdateTrigger
+   public void updateDataTrigger(WebTableContext ctx){
+      System.out.println("------------- updateDataTrigger --------------");
+   }
+
+{{end  -}}
+
+
+{{- if  .EnadbleDeleteTrigger  }}
+   @WDeleteTrigger
+   public void deleteDataTrigger(WebTableContext ctx){
+     System.out.println("------------- deleteDataTrigger --------------");
+   }
+{{end  -}}
+
 }

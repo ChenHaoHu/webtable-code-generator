@@ -5,10 +5,17 @@ import (
 )
 
 type Field struct {
-	Type   string
-	Name   string
-	Alias  string
-	Column string
+	Type                               string
+	Name                               string
+	Alias                              string
+	Column                             string
+	EnableRead                         bool
+	EnableInsert                       bool
+	EnableUpdate                       bool
+	EnableFind                         bool
+	EnableSort                         bool
+	EnableConvertToShowFunction        bool
+	EnableConvertToPersistenceFunction bool
 }
 
 func NewFiled() *Field {

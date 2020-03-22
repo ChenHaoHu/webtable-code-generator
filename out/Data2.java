@@ -1,4 +1,4 @@
-//create by webtable-code-generator webtable_v1 gen at Mar 20, 2020 23:36:54 UTC
+//create by webtable-code-generator webtable_v1 gen at Mar 21, 2020 00:05:09 UTC
 //package 
 package top.hcy.entity;
 
@@ -14,7 +14,7 @@ import top.hcy.webtable.common.enums.WebFieldType;
 
 
 @WTable(aliasName = "data2",tableName = "data2")
-public class data2 {
+public class Data2 {
 
 
    
@@ -155,6 +155,13 @@ public class data2 {
    public Object wdata4FieldToPersistence(Object ob){
       System.out.println("------------- wdata4FieldToPersistence ------------- ");
       return ob;
+   }
+
+
+ 
+   @WSelectTrigger
+   public void selectDataTrigger(WebTableContext ctx){
+      System.out.println("------------- selectDataTrigger --------------");
    }
 
 }

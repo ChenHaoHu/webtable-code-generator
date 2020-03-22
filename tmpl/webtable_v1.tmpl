@@ -7,13 +7,16 @@ import top.hcy.webtable.annotation.charts.WChart;
 import top.hcy.webtable.annotation.field.*;
 import top.hcy.webtable.annotation.method.WDeleteTrigger;
 import top.hcy.webtable.annotation.method.WInsertTrigger;
+import top.hcy.webtable.annotation.method.WSelectTrigger;
 import top.hcy.webtable.annotation.method.WUpdateTrigger;
 import top.hcy.webtable.annotation.table.*;
 import top.hcy.webtable.charts.WCharts;
+import top.hcy.webtable.common.WebTableContext;
 import top.hcy.webtable.common.enums.WebFieldType;
+import java.util.ArrayList;
 
 {{ if  .EnableInsert }}@WEnadbleInsert {{end -}}
-{{ if  .EnadbleFind }}@WEnadbleInsert {{end -}}
+{{ if  .EnadbleFind }}@WEnadbleFind {{end -}}
 {{ if  .EnadbleUpdate }}@WEnadbleUpdate {{end -}}
 {{ if  .EnadbleSort }}@WEnadbleSort {{end -}}
 {{ if  .EnadbleDelete }}@WEnadbleDelete {{end -}}
@@ -86,6 +89,35 @@ public class {{.ClassName}} {
    public void deleteDataTrigger(WebTableContext ctx){
      System.out.println("------------- deleteDataTrigger --------------");
    }
+{{end  -}}
+
+
+{{- if  .EnadbleDeleteTrigger  }}
+
+   @WChart(value = "示例图表",showDashboard = true)
+   public Object showChartDemo(){
+
+      ArrayList<String> x = new ArrayList<>();
+      ArrayList<Integer> y = new ArrayList<>();
+
+      x.add("aaa");
+      x.add("bbb");
+      x.add("ccc");
+      x.add("ddd");
+
+      y.add(100);
+      y.add(200);
+      y.add(300);
+      y.add(400);
+
+      WCharts wBarChart = new WCharts(x, y, WCharts.PieChart1);
+      wBarChart.setXname("横坐标");
+      wBarChart.setYname("竖坐标");
+      wBarChart.setTitle("示例图表");
+      return wBarChart;
+
+   }
+
 {{end  -}}
 
 }

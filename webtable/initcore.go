@@ -75,21 +75,12 @@ func handleTable(table string) *Class {
 		fields = append(fields, *field)
 	}
 	class.Package = globalPackage
-	class.ClassName = table
+	class.ClassName = dbTableNameConv(table)
 	class.Alias = table
 	class.Table = table
 	class.Fields = fields
+	syncDefaultClass(class)
 	return class
-}
-
-func syncDefaultField(field *Field) {
-	field.EnableRead = true
-	field.EnableInsert = false
-	field.EnableUpdate = false
-	field.EnableFind = false
-	field.EnableSort = false
-	field.EnableConvertToShowFunction = true
-	field.EnableConvertToPersistenceFunction = true
 }
 
 func getTableDESC(table string) []DBFieldDesc {

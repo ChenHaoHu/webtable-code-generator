@@ -1,15 +1,26 @@
 
 # this yml file is made by generate 0.0.1 for building entity java file.
 # U also  should check and edit it,Have a good time!
-# build at 2020-03-20 23:36:24
-project: "21212"
-desc: "2121"
+# build at 2020-03-21 00:09:19
+project: top.hcy.webtabletest.entity
+desc: top.hcy.webtabletest.entity
 classes:
   books:
-    package: top.hcy.entity
-    classname: books
+    package: top.hcy.webtabletest.entity
+    classname: Books
     alias: books
     table: books
+    enableinsert: true
+    enadblefind: true
+    enadbleupdate: true
+    enadblesort: true
+    enadbledelete: true
+    enadblechart: true
+    enadbleselecttrigger: true
+    enadbleinserttrigger: true
+    enadbleupdatetrigger: true
+    enadbledeletetrigger: true
+    enadblechartdemo: true
     fields:
     - type: int
       name: bookId
@@ -27,10 +38,10 @@ classes:
       alias: book_name
       column: book_name
       enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
+      enableinsert: true
+      enableupdate: true
+      enablefind: true
+      enablesort: true
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: String
@@ -38,9 +49,9 @@ classes:
       alias: book_desc
       column: book_desc
       enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
+      enableinsert: true
+      enableupdate: true
+      enablefind: true
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
@@ -51,7 +62,7 @@ classes:
       enableread: true
       enableinsert: false
       enableupdate: false
-      enablefind: false
+      enablefind: true
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
@@ -61,7 +72,7 @@ classes:
       column: book_num
       enableread: true
       enableinsert: false
-      enableupdate: false
+      enableupdate: true
       enablefind: false
       enablesort: false
       enableconverttoshowfunction: true
@@ -77,22 +88,23 @@ classes:
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
+    createdon: 0001-01-01T00:00:00Z
+  data1:
+    package: top.hcy.webtabletest.entity
+    classname: Data1
+    alias: data1
+    table: data1
     enableinsert: false
-    enadblefind: true
+    enadblefind: false
     enadbleupdate: false
-    enadblesort: true
+    enadblesort: false
     enadbledelete: false
     enadblechart: false
     enadbleselecttrigger: true
-    enadbleinserttrigger: true
+    enadbleinserttrigger: false
     enadbleupdatetrigger: false
-    enadbledeletetrigger: true
-    createdon: 0001-01-01T00:00:00Z
-  data1:
-    package: top.hcy.entity
-    classname: data1
-    alias: data1
-    table: data1
+    enadbledeletetrigger: false
+    enadblechartdemo: true
     fields:
     - type: int
       name: id
@@ -182,22 +194,23 @@ classes:
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
+    createdon: 0001-01-01T00:00:00Z
+  data2:
+    package: top.hcy.webtabletest.entity
+    classname: Data2
+    alias: data2
+    table: data2
     enableinsert: false
     enadblefind: false
     enadbleupdate: false
     enadblesort: false
     enadbledelete: false
     enadblechart: false
-    enadbleselecttrigger: false
+    enadbleselecttrigger: true
     enadbleinserttrigger: false
     enadbleupdatetrigger: false
     enadbledeletetrigger: false
-    createdon: 0001-01-01T00:00:00Z
-  data2:
-    package: top.hcy.entity
-    classname: data2
-    alias: data2
-    table: data2
+    enadblechartdemo: true
     fields:
     - type: int
       name: id
@@ -287,22 +300,23 @@ classes:
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
+    createdon: 0001-01-01T00:00:00Z
+  user:
+    package: top.hcy.webtabletest.entity
+    classname: User
+    alias: user
+    table: user
     enableinsert: false
     enadblefind: false
     enadbleupdate: false
     enadblesort: false
     enadbledelete: false
     enadblechart: false
-    enadbleselecttrigger: false
+    enadbleselecttrigger: true
     enadbleinserttrigger: false
     enadbleupdatetrigger: false
     enadbledeletetrigger: false
-    createdon: 0001-01-01T00:00:00Z
-  user:
-    package: top.hcy.entity
-    classname: user
-    alias: user
-    table: user
+    enadblechartdemo: true
     fields:
     - type: int
       name: id
@@ -348,16 +362,6 @@ classes:
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
-    enableinsert: false
-    enadblefind: false
-    enadbleupdate: false
-    enadblesort: false
-    enadbledelete: false
-    enadblechart: false
-    enadbleselecttrigger: false
-    enadbleinserttrigger: false
-    enadbleupdatetrigger: false
-    enadbledeletetrigger: false
     createdon: 0001-01-01T00:00:00Z
 dbconfig:
   type: mysql

@@ -1,4 +1,4 @@
-//create by webtable-code-generator webtable_v1 gen at Mar 20, 2020 23:36:54 UTC
+//create by webtable-code-generator webtable_v1 gen at Mar 21, 2020 00:05:09 UTC
 //package 
 package top.hcy.entity;
 
@@ -12,9 +12,9 @@ import top.hcy.webtable.annotation.table.*;
 import top.hcy.webtable.charts.WCharts;
 import top.hcy.webtable.common.enums.WebFieldType;
 
-@WEnadbleInsert @WEnadbleSort 
+
 @WTable(aliasName = "books",tableName = "books")
-public class books {
+public class Books {
 
 
    
@@ -130,16 +130,4 @@ public class books {
       System.out.println("------------- selectDataTrigger --------------");
    }
 
-
- 
-   @WInsertTrigger
-   public void insertDataTrigger(WebTableContext ctx){
-      System.out.println("------------- insertDataTrigger --------------");
-   }
-
-
-   @WDeleteTrigger
-   public void deleteDataTrigger(WebTableContext ctx){
-     System.out.println("------------- deleteDataTrigger --------------");
-   }
 }

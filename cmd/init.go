@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"fmt"
+	// "fmt"
 	"generate/webtable"
 	"github.com/spf13/cobra"
 )
@@ -13,7 +13,7 @@ var initCmd = &cobra.Command{
 	DATABASE DESC => YML
 	目前只支持Mysql数据库`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("init called")
+		// fmt.Println("init called")
 		dbConfig.Type = "mysql"
 		webtable.InitProYML(dbConfig)
 	},

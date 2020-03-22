@@ -58,3 +58,13 @@ func dbFieldNameConv(fieldName string) string {
 	res = fieldName
 	return res
 }
+
+func syncDefaultField(field *Field) {
+	field.EnableRead = true
+	field.EnableInsert = false
+	field.EnableUpdate = false
+	field.EnableFind = false
+	field.EnableSort = false
+	field.EnableConvertToShowFunction = true
+	field.EnableConvertToPersistenceFunction = true
+}

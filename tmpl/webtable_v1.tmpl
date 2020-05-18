@@ -46,7 +46,7 @@ public class {{.ClassName}} {
 {{end }}
 
 {{- if $v.EnableConvertToPersistenceFunction }}
-   @WFieldToShow("{{$v.Name}}")
+   @WFieldToPersistence("{{$v.Name}}")
    public Object w{{$v.Name}}FieldToPersistence(Object ob){
       System.out.println("------------- w{{$v.Name}}FieldToPersistence ------------- ");
       return ob;

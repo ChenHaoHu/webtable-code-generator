@@ -1,30 +1,30 @@
 
 # this yml file is made by generate 0.0.1 for building entity java file.
 # U also  should check and edit it,Have a good time!
-# build at 2020-03-21 00:09:19
-project: top.hcy.webtabletest.entity
-desc: top.hcy.webtabletest.entity
+# build at 2020-05-18 14:30:31
+project: test
+desc: test
 classes:
-  books:
-    package: top.hcy.webtabletest.entity
-    classname: Books
-    alias: books
-    table: books
-    enableinsert: true
+  tb_book:
+    package: top.hcy.entity
+    classname: TbBook
+    alias: 书籍信息
+    table: tb_book
+    enableinsert: false
     enadblefind: true
     enadbleupdate: true
-    enadblesort: true
-    enadbledelete: true
-    enadblechart: true
+    enadblesort: false
+    enadbledelete: false
+    enadblechart: false
     enadbleselecttrigger: true
-    enadbleinserttrigger: true
-    enadbleupdatetrigger: true
-    enadbledeletetrigger: true
+    enadbleinserttrigger: false
+    enadbleupdatetrigger: false
+    enadbledeletetrigger: false
     enadblechartdemo: true
     fields:
     - type: int
       name: bookId
-      alias: book_id
+      alias: 编号
       column: book_id
       enableread: true
       enableinsert: false
@@ -35,34 +35,34 @@ classes:
       enableconverttopersistencefunction: true
     - type: String
       name: bookName
-      alias: book_name
+      alias: 书名
       column: book_name
       enableread: true
-      enableinsert: true
+      enableinsert: false
       enableupdate: true
-      enablefind: true
-      enablesort: true
+      enablefind: false
+      enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: String
       name: bookDesc
-      alias: book_desc
+      alias: 描述
       column: book_desc
       enableread: true
-      enableinsert: true
+      enableinsert: false
       enableupdate: true
-      enablefind: true
+      enablefind: false
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: double
       name: bookPrice
-      alias: book_price
+      alias: 价格
       column: book_price
       enableread: true
       enableinsert: false
-      enableupdate: false
-      enablefind: true
+      enableupdate: true
+      enablefind: false
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
@@ -72,7 +72,7 @@ classes:
       column: book_num
       enableread: true
       enableinsert: false
-      enableupdate: true
+      enableupdate: false
       enablefind: false
       enablesort: false
       enableconverttoshowfunction: true
@@ -89,11 +89,11 @@ classes:
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     createdon: 0001-01-01T00:00:00Z
-  data1:
-    package: top.hcy.webtabletest.entity
-    classname: Data1
-    alias: data1
-    table: data1
+  tb_task:
+    package: top.hcy.entity
+    classname: TbTask
+    alias: 任务信息
+    table: tb_task
     enableinsert: false
     enadblefind: false
     enadbleupdate: false
@@ -107,9 +107,9 @@ classes:
     enadblechartdemo: true
     fields:
     - type: int
-      name: id
-      alias: id
-      column: id
+      name: taskId
+      alias: task_id
+      column: task_id
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -118,9 +118,9 @@ classes:
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: String
-      name: name
-      alias: name
-      column: name
+      name: author
+      alias: author
+      column: author
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -128,10 +128,43 @@ classes:
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
-    - type: int
-      name: age
-      alias: age
-      column: age
+    - type: String
+      name: createTime
+      alias: create_time
+      column: create_time
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: desct
+      alias: desct
+      column: desct
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: endTime
+      alias: end_time
+      column: end_time
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: modifeTime
+      alias: modife_time
+      column: modife_time
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -151,42 +184,9 @@ classes:
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: String
-      name: data1
-      alias: data1
-      column: data1
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data2
-      alias: data2
-      column: data2
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data3
-      alias: data3
-      column: data3
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data4
-      alias: data4
-      column: data4
+      name: taskName
+      alias: task_name
+      column: task_name
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -195,11 +195,11 @@ classes:
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     createdon: 0001-01-01T00:00:00Z
-  data2:
-    package: top.hcy.webtabletest.entity
-    classname: Data2
-    alias: data2
-    table: data2
+  tb_user:
+    package: top.hcy.entity
+    classname: TbUser
+    alias: 人员信息
+    table: tb_user
     enableinsert: false
     enadblefind: false
     enadbleupdate: false
@@ -213,9 +213,9 @@ classes:
     enadblechartdemo: true
     fields:
     - type: int
-      name: id
-      alias: id
-      column: id
+      name: userid
+      alias: userid
+      column: userid
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -224,104 +224,9 @@ classes:
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: String
-      name: job
-      alias: job
-      column: job
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: int
-      name: num
-      alias: num
-      column: num
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: tip
-      alias: tip
-      column: tip
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data1
-      alias: data1
-      column: data1
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data2
-      alias: data2
-      column: data2
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data3
-      alias: data3
-      column: data3
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    - type: String
-      name: data4
-      alias: data4
-      column: data4
-      enableread: true
-      enableinsert: false
-      enableupdate: false
-      enablefind: false
-      enablesort: false
-      enableconverttoshowfunction: true
-      enableconverttopersistencefunction: true
-    createdon: 0001-01-01T00:00:00Z
-  user:
-    package: top.hcy.webtabletest.entity
-    classname: User
-    alias: user
-    table: user
-    enableinsert: false
-    enadblefind: false
-    enadbleupdate: false
-    enadblesort: false
-    enadbledelete: false
-    enadblechart: false
-    enadbleselecttrigger: true
-    enadbleinserttrigger: false
-    enadbleupdatetrigger: false
-    enadbledeletetrigger: false
-    enadblechartdemo: true
-    fields:
-    - type: int
-      name: id
-      alias: id
-      column: id
+      name: openid
+      alias: openid
+      column: openid
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -340,10 +245,142 @@ classes:
       enablesort: false
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
-    - type: int
-      name: age
-      alias: age
-      column: age
+    - type: String
+      name: avatar
+      alias: avatar
+      column: avatar
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: gender
+      alias: gender
+      column: gender
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: province
+      alias: province
+      column: province
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: city
+      alias: city
+      column: city
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: country
+      alias: country
+      column: country
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: identifytype
+      alias: identifytype
+      column: identifytype
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: phone
+      alias: phone
+      column: phone
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: email
+      alias: email
+      column: email
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: time
+      alias: time
+      column: time
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: collection
+      alias: collection
+      column: collection
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: jointext
+      alias: jointext
+      column: jointext
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: build
+      alias: build
+      column: build
+      enableread: true
+      enableinsert: false
+      enableupdate: false
+      enablefind: false
+      enablesort: false
+      enableconverttoshowfunction: true
+      enableconverttopersistencefunction: true
+    - type: String
+      name: share
+      alias: share
+      column: share
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -352,9 +389,9 @@ classes:
       enableconverttoshowfunction: true
       enableconverttopersistencefunction: true
     - type: int
-      name: num
-      alias: num
-      column: num
+      name: signdaynum
+      alias: signdaynum
+      column: signdaynum
       enableread: true
       enableinsert: false
       enableupdate: false
@@ -367,6 +404,6 @@ dbconfig:
   type: mysql
   host: 127.0.0.1
   port: 3306
-  database: wdb
-  username: admin
-  passwd: wdbadmin
+  database: test
+  username: test
+  passwd: passwordtext
